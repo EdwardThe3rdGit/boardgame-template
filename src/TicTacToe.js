@@ -14,8 +14,7 @@ function isDraw(cells){
   }
 }
 
-function isVictory(cells){
-  let p = TicTacToe.endIf.ctx.currentPlayer
+function isVictory(cells, p){
   if(cells[0] == p) {
     if(cells[1] == p && cells[2] == p) {
       return p
@@ -72,10 +71,8 @@ export const TicTacToe = {
     maxMoves: 1,
   },
 
- 
-
   endIf: function endIf(endIf) {
-    const winner = isVictory(endIf.G.cells);
+    const winner = isVictory(endIf.G.cells, endIf.ctx.currentPlayer);
     if (winner != null) {
       // our isVictory function returned a playerID so the game is over and we have a winner
       return { winner: winner };
@@ -104,4 +101,6 @@ export const TicTacToe = {
   },
 
 };
+
+
 
