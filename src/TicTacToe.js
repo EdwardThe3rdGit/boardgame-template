@@ -15,7 +15,7 @@ function isDraw(cells){
 }
 
 function isVictory(cells){
-  let p = TicTacToe.playerID
+  let p = TicTacToe.endIf.ctx.currentPlayer
   if(cells[0] == p) {
     if(cells[1] == p && cells[2] == p) {
       return p
